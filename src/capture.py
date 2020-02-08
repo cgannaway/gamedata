@@ -14,12 +14,11 @@ class screenCap:
     def screen_record(self):
         # bounding box is left x, top y, right x, bottom y
         capture = ImageGrab.grab(bbox=(self.lx, self.ty, self.rx, self.by))
-        printscreen =  np.array(capture)
+        color =  np.array(capture)
+        bw = cv2.cvtColor(color, cv2.COLOR_BGR2GRAY)
+        cv2.imshow('window',bw)
         
-        cv2.imshow('window',cv2.cvtColor(printscreen, cv2.COLOR_BGR2RGB))
-        if cv2.waitKey(25) & 0xFF == ord('q'):
-            cv2.destroyAllWindows()
-        return printscreen
+        return bw
             
 
 
