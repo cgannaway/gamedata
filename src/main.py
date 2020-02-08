@@ -3,10 +3,11 @@ import time
 import capture
 import cv2
 
-#monitor 1 health location
-monitor1 = np.array([670,965,735,1000])
-#monitor 2 health location. is black for some reason
-monitor2 = np.array([2590,965,2655,1000])
+#monitor 1 health location r6:s - 1920x1080
+r6monitor1 = np.array([670,965,735,1000])
+
+#monitor1 health location csgo - 1920x1080
+csmonitor1 = np.array([50,1030,120,1070])
 
 def mainLoop():
     last_time = time.time()
@@ -22,6 +23,6 @@ def mainLoop():
             break
 
 if __name__ == "__main__":
-    screencapture = capture.screenCap(monitor1[0], monitor1[1], monitor1[2], monitor1[3])
+    screencapture = capture.screenCap(csmonitor1[0], csmonitor1[1], csmonitor1[2], csmonitor1[3])
     recognition = capture.ocr()
     mainLoop()

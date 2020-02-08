@@ -25,5 +25,5 @@ class screenCap:
 
 class ocr:
     def imgtostring(self, img):
-        number = pytesseract.image_to_string(img)
+        number = pytesseract.image_to_string(img, config="--psm 13")
         return number
