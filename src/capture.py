@@ -2,6 +2,7 @@ import numpy as np
 from PIL import ImageGrab, Image
 import cv2
 import time
+import pytesseract
 
 class screenCap:
 
@@ -22,3 +23,7 @@ class screenCap:
             
 
 
+class ocr:
+    def imgtostring(self, img):
+        number = pytesseract.image_to_string(img)
+        return number
